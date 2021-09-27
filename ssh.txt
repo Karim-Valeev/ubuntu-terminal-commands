@@ -1,0 +1,12 @@
+ssh-keygen -t rsa -b 4096 -C "karim.valeev.i@gmail.com"
+
+pain@machine:~$ eval "$(ssh-agent -s)"
+Agent pid 17433
+
+pain@machine:~$ ssh-add ~/.ssh/id_rsa
+Identity added: /home/pain/.ssh/id_rsa (/home/pain/.ssh/id_rsa)
+
+xclip -sel clip < ~/.ssh/id_rsa.pub
+
+
+

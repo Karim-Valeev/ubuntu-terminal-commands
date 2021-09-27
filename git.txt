@@ -1,0 +1,54 @@
+git:
+	status	
+	config --global init.defaultBranch develop --- меняет дефолтную ветку на develop
+	init
+		~$ echo "# TeamPlanner" >> README.md
+	add .
+	commit -am "first commit"
+	rm -rf --cached . --- позволяет убрать из индекса все с правилами из .gitignore
+
+	remote add origin https://...
+	или
+	clone https://github.com/libgit2/libgit2 (или любой другой репо)
+	
+	push -u/-f/... origin master
+	branch --- list all local branches
+	branch -r --- list all remote branches
+	branch -u origin/master
+	fetch origin
+	merge origin
+		~$ touch .gitignore
+	pull origin master
+	push origin master
+	  
+	branch -d branch_name --- удаление локальной ветки
+	push origin --delete branch_name --- удаление remote ветки
+	
+	log --- список всех коммитов в этой ветке
+	show (commit_id) --- последний коммит или конкретный
+	checkout commit_id --- перенос башки на конкретный коммит, надо будет ветку потом настроить
+	
+	rebase commit_id --- меняет начало ветки на какой-то коммит, можно сказать что мердж снизу
+
+	cherry pick --- тоже что-то с мердж
+
+	commit --amend -m "an updated commit message" --- затирание последнего коммита только в незащещенных ветках
+
+#######################################################################################
+
+FOR UPDATE:
+#!/bin/bash
+sudo add-apt-repository -y ppa:git-core/ppa
+sudo apt-get update
+sudo apt-get install git -y
+
+#######################################################################################
+
+ЗАМЕТКИ:
+	
+"origin" --- замена урлу удаленного репозитория, классическое название
+
+You have cloned a project and, somehow, the .git directory got deleted or corrupted. This leads Git to be unaware of your local history and will, therefore, cause it to throw this error when you try to push to or pull from the remote repository.
+
+Solution: git pull origin master --allow-unrelated-histories
+ 

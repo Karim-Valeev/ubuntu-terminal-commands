@@ -1,0 +1,14 @@
+sudo apt install zsh
+
+zsh --- Далее будет настройка
+
+curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh --- скачивание Oh my zsh
+
+chsh --- Утилита попросит пароль, а затем путь к исполняемому файлу оболочки, которую вы хотите использовать
+
+sudo apt install command-not-found
+echo "source /etc/zsh_command_not_found" >> ~/.zshrc
+exec zsh
+
+
+

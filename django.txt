@@ -1,0 +1,61 @@
+DJANGO:
+How to start Django project:
+1) настраиваем гит репо, ридми,гитигнор
+pip install virtualenv
+
+python3 -m venv env
+
+source env/bin/activate
+
+deactivate
+
+touch requirements.txt --- создаем файлик зависимостей
+nano requirements.txt --- чтобы туда что-то из bash вписать
+
+pip install -r requirements.txt --- установка всего из зависимостей
+
+mkdir src
+
+cd src
+
+django-admin startproject project_name . --- точка нужна, это текущий каталог
+
+python manage.py startapp app_name
+
+python manage.py createsuperuser
+
+python manage.py
+			runserver
+			makemigrations
+			migrate
+			createsuperuser
+			test
+
+(В ПайЧарме можно в нстройках в поисковике вбить Djangо, выбрать внизу Django и выбрав проект и настройки проекта подключить Django support)
+
+#######################################################################################
+To investigate what’s going on, we can ask for more detail by increasing the verbosity to maximum with -v 3
+
+python manage.py test -v 3
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Operations to perform:
+  Synchronize unmigrated apps: core
+  Apply all migrations: (none)
+Synchronizing apps without migrations:
+  Creating tables...
+    Running deferred SQL...
+Running migrations:
+  No migrations to apply.
+System check identified no issues (0 silenced).
+test_one (example.core.tests.test_example.ExampleTests) ... ok
+
+######################################################################################
+CELERY:
+
+celery -A project_name worker -l INFO --- запуск тасков
+
+celery -A project_name worker -l INFO -Q queue_name --- запуск таска и именованное очереди
+
+celery -A project_name beat --- To start the celery beat service aka sheduler
+OR
+celery -A project_name worker -B

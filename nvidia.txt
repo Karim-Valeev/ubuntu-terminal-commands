@@ -1,0 +1,15 @@
+sudo apt purge nvidia-* --- если слишком много места драйвера инвидии жрать будут
+
+lspci -k | grep -A 2 -i "VGA"
+
+software-properties-gtk
+
+sudo ubuntu-drivers devices --- покажет рекомендованный
+
+sudo apt-get install nvidia-driver-352
+
+Потом нужно аплаить изменения
+
+nvidia-settings
+
+

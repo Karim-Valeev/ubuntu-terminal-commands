@@ -1,0 +1,14 @@
+curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+
+--- If you need to install another version, for example 14.x, just change setup_12.x with setup_14.x
+
+sudo apt install nodejs --- Установит как node.js так и npm
+
+-S = --save --- устанавливает локалько в папочку node_modules и сохраняет в package.json
+-g = --global --- глобальная утсановка/удаление
+
+npm install <package>@<version> -S
+
+npm uninstall <package-name> -S/-D/-g 
+
+

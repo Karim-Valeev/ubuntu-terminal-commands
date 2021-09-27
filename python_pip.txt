@@ -1,0 +1,9 @@
+python3 -m pip install -U pip --- обновление пипа
+
+pip:
+	-V
+	list
+	install package_name
+	uninstall package_name
+
+pip freeze > requirements.txt --- создает файлик со всеми зависимостями, которые мы 					  уже заюзали

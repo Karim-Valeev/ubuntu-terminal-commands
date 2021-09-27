@@ -1,0 +1,16 @@
+sudo apt update
+
+sudo apt install redis-server
+
+sudo systemctl status redis-server
+
+sudo systemctl restart redis-server
+
+redis-cli --- Подключение к серверу редиса
+
+redis-cli -h <REDIS_IP_ADDRESS> ping
+	
+	exit --- чтобы выйти после подключения
+
+redis-cli --scan --pattern '*' --- посмотреть все ключи
+

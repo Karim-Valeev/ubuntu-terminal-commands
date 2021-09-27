@@ -1,0 +1,7 @@
+ip link show
+ip address show
+
+ping service_name_or_ip
+host service_name_or_ip
+dig service_name_or_ip
+nslookup service_name_or_ip

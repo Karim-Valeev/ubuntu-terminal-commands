@@ -1,0 +1,47 @@
+sudo -i -u postgres psql
+
+psql
+
+create database db_name;
+
+CREATE ROLE имя [ [ WITH ] параметр [ ... ] ]
+      SUPERUSER | NOSUPERUSER
+    | CREATEDB | NOCREATEDB
+    | CREATEROLE | NOCREATEROLE
+    | CREATEUSER | NOCREATEUSER
+    | INHERIT | NOINHERIT
+    | LOGIN | NOLOGIN
+    | REPLICATION | NOREPLICATION
+    | BYPASSRLS | NOBYPASSRLS
+    | CONNECTION LIMIT предел_подключений
+    | [ ENCRYPTED | UNENCRYPTED ] PASSWORD 'пароль'
+    | VALID UNTIL 'дата_время'
+    | IN ROLE имя_роли [, ...]
+    | IN GROUP имя_роли [, ...]
+    | ROLE имя_роли [, ...]
+    | ADMIN имя_роли [, ...]
+    | USER имя_роли [, ...]
+    | SYSID uid
+
+Расширить пользователю права:
+# alter user wanuser superuser createrole createdb;
+Ограничить:
+ alter user wanuser nosuperuser nocreaterole nocreatedb;
+
+postgres=# alter database wandb owner to wanuser;           --- Это дает все права
+or
+Postgres=# GRANT ALL PRIVILEGES ON DATABASE rudidb TO rudi; --- Это даст только
+								CREATE, 
+								CONNECT, 
+								and TEMPORARY
+(Можно еще сделать GRANT ALL (???))
+
+postgres@machine:~$ psql wandb -U wanuser
+Password for user wanuser:
+
+karimmm
+sore.throat
+
+\l --- список всех баз данных
+
+

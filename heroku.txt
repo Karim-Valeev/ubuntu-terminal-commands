@@ -1,0 +1,30 @@
+heroku login
+
+добавь репо в корневую папку
+
+heroku create <app name>
+
+heroku git:remote -a <app name> 
+
+touch Procfile | requirements.txt
+
+heroku local
+
+git checkout -b heroku-deploy
+heroku login
+git add .
+git commit -am "..."
+git push heroku heroku:master
+
+heroku apps:info <app name>
+
+heroku ps -a <app name> --- посмотреть кол-во оставшихся часов
+
+
+Деплой джанго проекта: 
+0) дебаг в фолс, аловед хотс прописываем "херокуапп.хероку.ком"
+1) Делаем апп через сайт
+2) pip3 install psycopg2==2.7.6
+3) pip install django-heroku
+4) ... 
+https://medium.com/analytics-vidhya/deploying-django-app-on-heroku-with-github-fb3e3aaaa633

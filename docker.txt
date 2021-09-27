@@ -1,0 +1,43 @@
+https://get.docker.com/
+Все команды по порядку сначала из ссылки Engine 
+Потом из ссылки Compose в Trello Links доске
+
+
+sudo systemctl status docker
+
+sudo docker images
+
+touch .dockerignore
+
+touch deploy/python/Dockerfile
+
+docker ps --- показывает все запущенные контейнеры
+
+sudo docker build -t project_name -f deploy/python/Dockerfile .
+sudo docker run --rm -ti --name projcet_name --publish 8000:8000 project_name
+
+# Очень сложно и длинные команды, надо еще сети и волумы делать по факту
+# На помощь приходит docker-compose c одним файликом настроек для всего, что нужно
+
+Docker Compose:
+
+docker-compose up --- запустит ближайший docker-compose.yml
+docker-compose up -d --- без логов
+-f --- указываем докеру какие-либо файлы настроек
+--build --- собираться каждый раз
+--rm --- удалить после того как остановится
+docker-compose down OR CTRL+SHIFT+C
+
+(У докера в файлах настроек True должен быть всегда 'True')
+
+# можно вместо адресов указывать имена в docker-compose.yml ,например:
+вместо 0.0.0.0:5432 --> postgres:5432
+
+docker exec -ti container_name bash --- провалиться внутрь контейнера
+
+Если порт занят:
+lsof -i :5432
+Если выше не сработало: sudo ss -lptn 'sport = :5432'
+kill <pid>
+
+

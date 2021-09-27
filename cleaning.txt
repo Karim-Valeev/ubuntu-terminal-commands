@@ -1,0 +1,17 @@
+sudo apt update
+
+sudo apt upgrade
+
+baobab --- disk usage
+
+sudo apt-get clean --- Очистка кеша APT
+
+sudo apt-get autoremove --- удаляет файлы, которые были зависимы от уже удаленных файлов
+
+sudo apt-get remove --auto-remove figlet --- удаляет чета конкретное и файл зависимостей
+
+sudo du -sh /var/cache/apt --- проверка сколько места занимает какой-либо файл/директория
+
+whereis java --- поиск места, где лежит команда
+
+sudo apt purge nvidia-* --- если слишком много места драйвера инвидии жрать будут

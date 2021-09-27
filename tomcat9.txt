@@ -1,0 +1,7 @@
+sudo systemctl enable tomcat9 --- to start Apache Tomcat Server
+sudo systemctl disable tomcat9 --- reverse to previous
+sudo systemctl restart tomcat9
+
+chmod a+x /path/to/tomcat/bin/catalina.sh --- если ошибка cannot run program '/path/to/tomcat/bin/catalina.sh' error=13 permission denied
+
+
